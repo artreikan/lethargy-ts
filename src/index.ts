@@ -10,9 +10,9 @@ export default class Lethargy {
   }
 
   // Used internally and should not be manipulated
-  private lastUpDeltas: any[] = []
-  private lastDownDeltas: any[] = []
-  private deltasTimestamp: any[] = []
+  private lastUpDeltas: number[] = []
+  private lastDownDeltas: number[] = []
+  private deltasTimestamp: number[] = []
 
   constructor(userConfig: LethargyConfig) {
     if (typeof userConfig?.stability !== 'undefined') {
