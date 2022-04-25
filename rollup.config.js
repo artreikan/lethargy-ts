@@ -12,8 +12,9 @@ export default [
   {
     input: './src/index.ts',
     output: {
+      name: 'Lethargy',
       file: './lib/index.js',
-      format: 'cjs',
+      format: 'iife',
     },
     plugins: [typescript()],
   },
