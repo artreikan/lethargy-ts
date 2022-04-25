@@ -37,4 +37,30 @@ export default class Lethargy {
 
     console.log(this.lastDownDeltas, this.lastUpDeltas, this.deltasTimestamp)
   }
+
+  // Checks whether the mousewheel event is an intent
+  check(e: WheelEvent) {
+    // Normalize delta, -40 is a magic number
+    const lastDelta = e.deltaY * -40
+
+    // Add the new event timestamp to deltasTimestamp array, and remove the oldest entry
+    this.deltasTimestamp.push(Date.now())
+    this.deltasTimestamp.shift()
+
+    // If lastDelta is positive, it means the user scrolled up
+    if (lastDelta > 0) {
+      this.lastUpDeltas.push(lastDelta)
+      this.lastUpDeltas.shift()
+      return this.isInertia(1)
+    } else {
+      // Otherwise, the user scrolled down
+      this.lastDownDeltas.push(lastDelta)
+      this.lastDownDeltas.shift()
+      return this.isInertia(-1)
+    }
+  }
+
+  isInertia(direction: number) {
+    console.log(direction)
+  }
 }
