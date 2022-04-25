@@ -14,7 +14,7 @@ export default class Lethargy {
   private lastDownDeltas: number[] = []
   private deltasTimestamp: number[] = []
 
-  constructor(userConfig: LethargyConfig) {
+  constructor(userConfig?: LethargyConfig) {
     if (typeof userConfig?.stability !== 'undefined') {
       this.config.stability = Math.abs(userConfig.stability)
     }

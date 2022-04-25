@@ -4,7 +4,7 @@ export default class Lethargy {
     private lastUpDeltas;
     private lastDownDeltas;
     private deltasTimestamp;
-    constructor(userConfig: LethargyConfig);
+    constructor(userConfig?: LethargyConfig);
     check(e: WheelEvent): void;
     isInertia(direction: number): void;
 }
